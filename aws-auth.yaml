@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::124355635734:role/eksctl-expense-nodegroup-expense-NodeInstanceRole-jZ6KEEjSmBDz
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - default-trainee
+      userarn: arn:aws:iam::124355635734:user/bhavya
+      username: bhavya
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2025-03-18T07:17:30Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "1224"
+  uid: 71695aa1-731f-422e-a97f-c9334a2a7ef5
